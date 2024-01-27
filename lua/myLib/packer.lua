@@ -14,7 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- plugins here
-  
+  use 'ThePrimeagen/vim-be-good'
   use{
 	  'nvim-telescope/telescope.nvim', tag='0.1.3', 
 	  --or , branch='0.1.x',
@@ -31,6 +31,11 @@ return require('packer').startup(function(use)
 	  end
 
   })
+
+  --[[use({
+	  'projekt0n/github-nvim-theme',
+	  vim.cmd('colorscheme github_dark_dimmed')
+  })]]
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
@@ -49,6 +54,8 @@ return require('packer').startup(function(use)
 		{'hrsh7th/cmp-nvim-lsp'},
 		{'hrsh7th/cmp-nvim-lua'},
 		{'saadparwaiz1/cmp_luasnip'},
+
+		{"mfussenegger/nvim-jdtls", ft = { "java" }},
 
 		{'L3MON4D3/LuaSnip'},
 		{'rafamadriz/friendly-snippets'},
