@@ -8,7 +8,7 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	--:LSPInstall
-	ensure_installed = {'tsserver'},
+	ensure_installed = {'tsserver','rust_analyzer','jdtls'},
 	handlers = {
 		lsp_zero.default_setup,
 		lua_ls = function()
@@ -25,7 +25,7 @@ local cmp_action = lsp_zero.cmp_action()
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		--Enter to confirm completion
-		['<CR>'] = cmp.mapping.confirm({select = false}),
+		['<TAB>'] = cmp.mapping.confirm({select = true}),
 		--Ctrl+Space trigger completion menu
 		['<C-Space>'] = cmp.mapping.complete(),
 
