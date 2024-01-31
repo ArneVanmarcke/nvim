@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
-  use{
+  --[[use{
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',
 	  requires ={
@@ -55,11 +55,30 @@ return require('packer').startup(function(use)
 		{'hrsh7th/cmp-nvim-lua'},
 		{'saadparwaiz1/cmp_luasnip'},
 
-		{"mfussenegger/nvim-jdtls", ft = { "java" }},
-
 		{'L3MON4D3/LuaSnip'},
 		{'rafamadriz/friendly-snippets'},
 	  }
+  }]]
+
+  use{
+	'neovim/nvim-lspconfig',
+	requires = {
+		{'williamboman/mason.nvim', config = true},
+		{'williamboman/mason-lspconfig.nvim'},
+	}
+  }
+
+  use{
+	'hrsh7th/nvim-cmp',
+	requires={
+		{'L3MON4D3/LuaSnip'},
+		{'saadparwaiz1/cmp_luasnip'},
+		{'hrsh7th/cmp-buffer'},
+		{'hrsh7th/cmp-path'},
+		{'hrsh7th/cmp-nvim-lsp'},
+		{'hrsh7th/cmp-nvim-lua'},
+		{'rafamadriz/friendly-snippets'},
+	}
   }
 
 
