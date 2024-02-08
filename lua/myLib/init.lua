@@ -1,2 +1,2 @@
 require("myLib.remap")
-require("myLib.packer")
+require("myLib.lazy")
