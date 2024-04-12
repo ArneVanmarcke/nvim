@@ -79,12 +79,13 @@ local on_attach = function(_, bufnr)
   --  define the property 'filetypes' to the map in question.
   local servers = {
 	-- clangd = {},
+	intelephense = {},
 	gopls = {},
 	pyright = {},
 	rust_analyzer = {},
 	tsserver = {},
+	clangd = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-  
 	lua_ls = {
 	  Lua = {
 		workspace = { checkThirdParty = false },
@@ -141,11 +142,12 @@ local on_attach = function(_, bufnr)
 	  ['<C-p>'] = cmp.mapping.select_prev_item(),
 	  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
 	  ['<C-f>'] = cmp.mapping.scroll_docs(4),
-	  ['<C-Space>'] = cmp.mapping.complete {},
+	  --['<C-q>'] = cmp.mapping.complete {},
 	  ['<Tab>'] = cmp.mapping.confirm {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
 	  },
+	  ['<C-q>'] = cmp.mapping.abort(),
 	  --[[['<Tab>'] = cmp.mapping(function(fallback)
 		if cmp.visible() then
 		  cmp.select_next_item()
@@ -171,5 +173,3 @@ local on_attach = function(_, bufnr)
 	  { name = 'path' },
 	},
   }
-  
-  

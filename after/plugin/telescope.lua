@@ -1,10 +1,4 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-
-
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
@@ -84,4 +78,4 @@ require('telescope').setup {
   vim.keymap.set('n', '<leader>fG', ':LiveGrepGitRoot<cr>', { desc = '[f]ind by [G]rep on Git Root' })
   vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = '[f]ind [D]iagnostics' })
   vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[f]ind [R]esume' })
-  
+  vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
