@@ -60,17 +60,17 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Custom keymaps
-vim.keymap.set("n", "<leader>fm", function ()
-	vim.lsp.buf.format({async = true})
-end, { desc = 'Format file'})
+vim.keymap.set("n", "<leader>fm", function()
+	vim.lsp.buf.format({ async = true })
+end, { desc = 'Format file' })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-  group = highlight_group,
-  pattern = '*',
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+	group = highlight_group,
+	pattern = '*',
 })
