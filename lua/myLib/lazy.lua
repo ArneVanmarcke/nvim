@@ -24,7 +24,7 @@ require('lazy').setup({
 	'tpope/vim-fugitive',
 	'tpope/vim-rhubarb',
 
-	--'github/copilot.vim',
+	'github/copilot.vim',
 
 	-- NOTE: This is where your plugins related to LSP can be installed.
 	--  The configuration is done below. Search for lspconfig to find it below.
@@ -153,15 +153,22 @@ require('lazy').setup({
     end,
   },]]
 
-	{
+	--[[{
 		'NLKNguyen/papercolor-theme',
 		config = function()
 			vim.cmd('colorscheme PaperColor')
 			vim.cmd('set number')
 			vim.cmd('set laststatus=2')
 		end,
-	},
+	},]]
 
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			vim.cmd("colorscheme rose-pine")
+		end
+	},
 	{
 		-- Set lualine as statusline
 		'nvim-lualine/lualine.nvim',
